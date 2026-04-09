@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $pageTitle ?? 'Workshops' }} | Hyperbird Workshops</title>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-slate-100">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="{{ route('home') }}" class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-rocket text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold gradient-text">Hyperbird</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-400' }} transition-colors font-medium">
+                        <i class="fas fa-home mr-2"></i>Home
+                    </a>
+                    <a href="{{ route('workshops.index') }}" class="{{ request()->routeIs('workshops.*') ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-400' }} transition-colors font-medium">
+                        <i class="fas fa-chalkboard-teacher mr-2"></i>Workshops
+                    </a>
+                    <a href="{{ route('kits.index') }}" class="{{ request()->routeIs('kits.*') ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-400' }} transition-colors font-medium">
+                        <i class="fas fa-box-open mr-2"></i>Starter Kits
+                    </a>
+                    <a href="{{ route('assignments.index') }}" class="{{ request()->routeIs('assignments.*') ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-400' }} transition-colors font-medium">
+                        <i class="fas fa-tasks mr-2"></i>Assignments
+                    </a>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="{{ route('assignments.index') }}" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 animate-pulse-glow">
+                        <i class="fas fa-paper-plane mr-2"></i>Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-slate-300 hover:text-white" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden glass">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="{{ route('home') }}" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                    <i class="fas fa-home mr-2"></i>Home
+                </a>
+                <a href="{{ route('workshops.index') }}" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                    <i class="fas fa-chalkboard-teacher mr-2"></i>Workshops
+                </a>
+                <a href="{{ route('kits.index') }}" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                    <i class="fas fa-box-open mr-2"></i>Starter Kits
+                </a>
+                <a href="{{ route('assignments.index') }}" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
+                    <i class="fas fa-tasks mr-2"></i>Assignments
+                </a>
+                <a href="{{ route('assignments.index') }}" class="block px-3 py-2 mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg text-center font-medium">
+                    <i class="fas fa-paper-plane mr-2"></i>Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-16">
+        @yield('content')
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold gradient-text">Hyperbird LLC</span>
+                    </div>
+                    <p class="text-slate-400 mb-4">Next-generation software development and technology innovation for Africa and global markets.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-indigo-400 transition-colors">
+                            <i class="fab fa-discord text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="{{ route('home') }}" class="text-slate-400 hover:text-indigo-400 transition-colors"><i class="fas fa-chevron-right mr-2 text-xs"></i>Home</a></li>
+                        <li><a href="{{ route('workshops.index') }}" class="text-slate-400 hover:text-indigo-400 transition-colors"><i class="fas fa-chevron-right mr-2 text-xs"></i>Workshops</a></li>
+                        <li><a href="{{ route('kits.index') }}" class="text-slate-400 hover:text-indigo-400 transition-colors"><i class="fas fa-chevron-right mr-2 text-xs"></i>Starter Kits</a></li>
+                        <li><a href="{{ route('assignments.index') }}" class="text-slate-400 hover:text-indigo-400 transition-colors"><i class="fas fa-chevron-right mr-2 text-xs"></i>Assignments</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-4 gradient-text">Contact</h3>
+                    <ul class="space-y-2 text-slate-400">
+                        <li><i class="fas fa-envelope mr-2 text-indigo-400"></i>workshops@hyperbird.tech</li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-indigo-400"></i>Africa & Global Markets</li>
+                        <li><i class="fas fa-clock mr-2 text-indigo-400"></i>Available 24/7</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-400">
+                <p>&copy; {{ date('Y') }} Hyperbird LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+    @if (isset($extraScript))
+        {!! $extraScript !!}
+    @endif
+</body>
+</html>
