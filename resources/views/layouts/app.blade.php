@@ -13,65 +13,64 @@
 </head>
 <body class="bg-slate-950 text-slate-100">
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="{{ route('home') }}" class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                        <i class="fas fa-rocket text-white text-xl"></i>
-                    </div>
-                    <span class="text-xl font-bold gradient-text">Hyperbird</span>
+                <a href="{{ route('home') }}" class="flex items-center">
+                    <img src="{{ asset('assets/hyperbird-logo-700x200-white.png') }}" alt="Hyperbird" class="h-8 w-auto">
                 </a>
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-400' }} transition-colors font-medium">
-                        <i class="fas fa-home mr-2"></i>Home
+                    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'text-white' : 'text-slate-400 hover:text-white' }} transition-colors text-sm font-medium">
+                        Home
                     </a>
-                    <a href="{{ route('workshops.index') }}" class="{{ request()->routeIs('workshops.*') ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-400' }} transition-colors font-medium">
-                        <i class="fas fa-chalkboard-teacher mr-2"></i>Workshops
+                    <a href="{{ route('workshops.index') }}" class="{{ request()->routeIs('workshops.*') ? 'text-white' : 'text-slate-400 hover:text-white' }} transition-colors text-sm font-medium">
+                        Workshops
                     </a>
-                    <a href="{{ route('kits.index') }}" class="{{ request()->routeIs('kits.*') ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-400' }} transition-colors font-medium">
-                        <i class="fas fa-box-open mr-2"></i>Starter Kits
+                    <a href="{{ route('kits.index') }}" class="{{ request()->routeIs('kits.*') ? 'text-white' : 'text-slate-400 hover:text-white' }} transition-colors text-sm font-medium">
+                        Starter Kits
                     </a>
-                    <a href="{{ route('assignments.index') }}" class="{{ request()->routeIs('assignments.*') ? 'text-indigo-400' : 'text-slate-300 hover:text-indigo-400' }} transition-colors font-medium">
-                        <i class="fas fa-tasks mr-2"></i>Assignments
+                    <a href="{{ route('assignments.index') }}" class="{{ request()->routeIs('assignments.*') ? 'text-white' : 'text-slate-400 hover:text-white' }} transition-colors text-sm font-medium">
+                        Assignments
                     </a>
                 </div>
 
                 <!-- CTA Button -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="{{ route('assignments.index') }}" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white px-6 py-2 rounded-full font-medium transition-all transform hover:scale-105 animate-pulse-glow">
-                        <i class="fas fa-paper-plane mr-2"></i>Get Started
+                <div class="hidden md:flex items-center">
+                    <a href="{{ route('assignments.index') }}" class="bg-white text-slate-900 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-slate-100 transition-colors">
+                        Get Started
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
-                <button class="md:hidden text-slate-300 hover:text-white" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button class="md:hidden text-slate-400 hover:text-white p-2" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden glass">
-            <div class="px-4 pt-2 pb-4 space-y-2">
-                <a href="{{ route('home') }}" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-                    <i class="fas fa-home mr-2"></i>Home
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-slate-800/50">
+            <div class="px-6 py-4 space-y-3">
+                <a href="{{ route('home') }}" class="block py-2 text-slate-300 hover:text-white transition-colors text-sm font-medium">
+                    Home
                 </a>
-                <a href="{{ route('workshops.index') }}" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-                    <i class="fas fa-chalkboard-teacher mr-2"></i>Workshops
+                <a href="{{ route('workshops.index') }}" class="block py-2 text-slate-300 hover:text-white transition-colors text-sm font-medium">
+                    Workshops
                 </a>
-                <a href="{{ route('kits.index') }}" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-                    <i class="fas fa-box-open mr-2"></i>Starter Kits
+                <a href="{{ route('kits.index') }}" class="block py-2 text-slate-300 hover:text-white transition-colors text-sm font-medium">
+                    Starter Kits
                 </a>
-                <a href="{{ route('assignments.index') }}" class="block px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white transition-colors">
-                    <i class="fas fa-tasks mr-2"></i>Assignments
+                <a href="{{ route('assignments.index') }}" class="block py-2 text-slate-300 hover:text-white transition-colors text-sm font-medium">
+                    Assignments
                 </a>
-                <a href="{{ route('assignments.index') }}" class="block px-3 py-2 mt-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg text-center font-medium">
-                    <i class="fas fa-paper-plane mr-2"></i>Get Started
-                </a>
+                <div class="pt-4 mt-4 border-t border-slate-800/50">
+                    <a href="{{ route('assignments.index') }}" class="block w-full bg-white text-slate-900 px-5 py-2 rounded-lg text-sm font-semibold text-center hover:bg-slate-100 transition-colors">
+                        Get Started
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -87,10 +86,8 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <!-- Brand -->
                 <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                            <i class="fas fa-rocket text-white text-xl"></i>
-                        </div>
+                    <div class="flex items-center mb-4">
+                        <img src="{{ asset('assets/hyperbird-logo-700x200-white.png') }}" alt="Hyperbird" class="h-10 w-auto mr-3">
                         <span class="text-xl font-bold gradient-text">Hyperbird LLC</span>
                     </div>
                     <p class="text-slate-400 mb-4">Next-generation software development and technology innovation for Africa and global markets.</p>

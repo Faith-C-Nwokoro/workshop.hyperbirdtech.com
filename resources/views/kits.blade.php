@@ -2,20 +2,41 @@
 
 @section('content')
 <!-- Page Header -->
-<section class="relative py-20 overflow-hidden">
+<section class="relative py-24 overflow-hidden">
+    <!-- Subtle Background -->
     <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
-    <div class="absolute top-10 right-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
     
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i class="fas fa-box-open text-white text-3xl"></i>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <!-- Badge -->
+            <div class="inline-flex items-center px-4 py-2 rounded-full border border-slate-800 bg-slate-900/50">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                <span class="text-sm text-slate-400">Free Resources</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                <span class="text-white">Workshop</span>
+                <br>
+                <span class="gradient-text">Starter Kits</span>
+            </h1>
+            
+            <p class="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                Access templates, code samples, and tools to maximize your learning experience.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{{ route('workshops.index') }}" class="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-xl font-semibold transition-all transform hover:scale-105 hover:bg-slate-100 shadow-lg shadow-white/10">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    View Workshops
+                </a>
+                <a href="{{ route('assignments.index') }}" class="inline-flex items-center justify-center px-8 py-4 border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white rounded-xl font-semibold transition-all">
+                    <i class="fas fa-upload mr-2"></i>
+                    Submit Assignment
+                </a>
+            </div>
         </div>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            <span class="gradient-text">Workshop Resources & Tools</span>
-        </h1>
-        <p class="text-xl text-slate-400 max-w-2xl mx-auto">
-            Access templates, code samples, and tools to maximize your learning experience
-        </p>
     </div>
 </section>
 

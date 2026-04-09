@@ -3,106 +3,56 @@
 @section('content')
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-             alt="Team collaboration and learning" 
-             class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/90 to-slate-950/80"></div>
-    </div>
-
-    <!-- Background Effects -->
-    <div class="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-    <div class="absolute top-40 right-20 w-72 h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 2s"></div>
-    <div class="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style="animation-delay: 4s"></div>
+    <!-- Subtle Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <!-- Left Content -->
-            <div class="space-y-8">
-                <div class="inline-flex items-center px-4 py-2 rounded-full glass">
-                    <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                    <span class="text-sm text-slate-300">February – April 2026</span>
-                </div>
-
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-                    <span class="gradient-text">Achieve Excellence</span>
-                    <br>
-                    <span class="text-white">With Our Services</span>
-                </h1>
-
-                <p class="text-xl text-slate-400 leading-relaxed">
-                    Building Scalable Solutions with AI, Blockchain & Modern Web Technologies. Join our virtual workshop series and transform your skills.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="{{ route('workshops.index') }}" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-full font-semibold transition-all transform hover:scale-105 animate-pulse-glow">
-                        <i class="fas fa-rocket mr-2"></i>
-                        View All Workshops
-                    </a>
-                    <a href="{{ route('assignments.index') }}" class="inline-flex items-center justify-center px-8 py-4 glass hover:bg-slate-800 text-white rounded-full font-semibold transition-all transform hover:scale-105">
-                        <i class="fas fa-paper-plane mr-2"></i>
-                        Submit Assignment
-                    </a>
-                </div>
-
-                <!-- Stats -->
-                <div class="grid grid-cols-3 gap-6 pt-8">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">10</div>
-                        <div class="text-sm text-slate-400">Workshops</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">100%</div>
-                        <div class="text-sm text-slate-400">Free Scholarship</div>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold gradient-text">$276</div>
-                        <div class="text-sm text-slate-400">Total Value</div>
-                    </div>
-                </div>
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <!-- Badge -->
+            <div class="inline-flex items-center px-4 py-2 rounded-full border border-slate-800 bg-slate-900/50">
+                <span class="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                <span class="text-sm text-slate-400">February – April 2026</span>
             </div>
 
-            <!-- Right Content - 3D Illustration -->
-            <div class="relative hidden lg:block">
-                <div class="relative z-10 card-3d">
-                    <div class="glass rounded-3xl p-8 space-y-6">
-                        <div class="flex items-center space-x-4">
-                            <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center">
-                                <i class="fas fa-users text-white text-2xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-semibold">Consultation Session</h3>
-                                <p class="text-slate-400">Live training on Google Meet</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-user text-white"></i>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Expert Instructors</p>
-                                    <p class="text-sm text-slate-400">Industry Leaders</p>
-                                </div>
-                            </div>
-                            <div class="text-right">
-                                <p class="text-2xl font-bold gradient-text">FREE</p>
-                                <p class="text-sm text-slate-400">100% Scholarship</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-2 text-slate-400">
-                            <i class="fas fa-users text-indigo-400"></i>
-                            <span>People who joined: 4500+</span>
-                        </div>
-                    </div>
+            <!-- Headline -->
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                <span class="text-white">Build the Future</span>
+                <br>
+                <span class="gradient-text">With Hyperbird</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto">
+                Expert-led workshops in AI, Blockchain, and Modern Web Technologies. Transform your skills with practical, hands-on training.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{{ route('workshops.index') }}" class="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-xl font-semibold transition-all transform hover:scale-105 hover:bg-slate-100 shadow-lg shadow-white/10">
+                    <i class="fas fa-arrow-right mr-2"></i>
+                    Explore Workshops
+                </a>
+                <a href="{{ route('assignments.index') }}" class="inline-flex items-center justify-center px-8 py-4 border border-slate-700 hover:border-slate-600 text-slate-300 hover:text-white rounded-xl font-semibold transition-all">
+                    <i class="fas fa-play mr-2"></i>
+                    Start Learning
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-8 pt-12 border-t border-slate-800/50 max-w-2xl mx-auto">
+                <div>
+                    <div class="text-3xl font-bold text-white">10</div>
+                    <div class="text-sm text-slate-500 mt-1">Workshops</div>
                 </div>
-                <!-- Floating Elements -->
-                <div class="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 1s">
-                    <i class="fas fa-robot text-white text-3xl"></i>
+                <div>
+                    <div class="text-3xl font-bold text-white">100%</div>
+                    <div class="text-sm text-slate-500 mt-1">Scholarship</div>
                 </div>
-                <div class="absolute -bottom-5 -left-5 w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center animate-float" style="animation-delay: 3s">
-                    <i class="fas fa-code text-white text-2xl"></i>
+                <div>
+                    <div class="text-3xl font-bold text-white">$276</div>
+                    <div class="text-sm text-slate-500 mt-1">Value</div>
                 </div>
             </div>
         </div>
