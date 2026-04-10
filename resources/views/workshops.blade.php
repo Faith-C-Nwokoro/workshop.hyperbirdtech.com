@@ -195,7 +195,7 @@
             All workshops are FREE for registered participants. Get live training on Google Meet, practical assignments with HBT tools, and expert feedback.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ route('assignments.index') }}" class="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-600 rounded-xl font-semibold transition-all transform hover:scale-105 hover:bg-slate-100">
+            <a href="{{ route('assignments.index') }}" class="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-xl font-semibold transition-all transform hover:scale-105 hover:bg-slate-100">
                 <i class="fas fa-paper-plane mr-2"></i>
                 Start Learning Now
             </a>

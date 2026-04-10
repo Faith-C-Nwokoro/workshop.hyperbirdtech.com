@@ -289,7 +289,7 @@
             Join thousands of learners who have already taken the first step towards their tech career
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="{{ route('workshops.index') }}" class="inline-flex items-center justify-center px-8 py-4 bg-white text-indigo-600 rounded-full font-semibold transition-all transform hover:scale-105 hover:bg-slate-100">
+            <a href="{{ route('workshops.index') }}" class="inline-flex items-center justify-center px-8 py-4 bg-white text-black rounded-full font-semibold transition-all transform hover:scale-105 hover:bg-slate-100">
                 <i class="fas fa-play-circle mr-2"></i>
                 Explore Workshops
             </a>
