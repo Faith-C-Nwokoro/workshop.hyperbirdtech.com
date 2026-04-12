@@ -81,11 +81,11 @@
 <!-- Workshops Grid -->
 <section id="workshops" class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch" style="grid-auto-rows: 1fr;">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @forelse ($workshops as $index => $workshop)
-            <div class="glass rounded-2xl overflow-hidden hover:bg-slate-800/50 transition-all transform hover:-translate-y-2 group flex flex-col h-full">
+            <div class="glass rounded-2xl overflow-hidden hover:bg-slate-800/50 transition-all transform hover:-translate-y-2 group">
                 <!-- Card Image -->
-                <div class="relative h-56 overflow-hidden">
+                <div class="relative h-40 overflow-hidden">
                     @php
                         $categoryImages = [
                             'Artificial Intelligence' => 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
@@ -123,7 +123,7 @@
                 </div>
 
                 <!-- Card Content -->
-                <div class="p-6 space-y-4 flex-grow flex flex-col h-[264px]">
+                <div class="p-6 space-y-4">
                     <!-- Category -->
                     <div class="flex items-center justify-between">
                         <span class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-medium">
