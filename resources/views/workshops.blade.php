@@ -81,9 +81,9 @@
 <!-- Workshops Grid -->
 <section id="workshops" class="py-16">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch" style="grid-auto-rows: 1fr;">
             @forelse ($workshops as $index => $workshop)
-            <div class="glass rounded-2xl overflow-hidden hover:bg-slate-800/50 transition-all transform hover:-translate-y-2 group">
+            <div class="glass rounded-2xl overflow-hidden hover:bg-slate-800/50 transition-all transform hover:-translate-y-2 group flex flex-col h-full">
                 <!-- Card Image -->
                 <div class="relative h-56 overflow-hidden">
                     @php
@@ -123,14 +123,14 @@
                 </div>
 
                 <!-- Card Content -->
-                <div class="p-6 space-y-4">
+                <div class="p-6 space-y-4 flex-grow flex flex-col h-[264px]">
                     <!-- Category -->
                     <div class="flex items-center justify-between">
                         <span class="inline-flex items-center px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-medium">
                             <i class="fas fa-tag mr-2 text-xs"></i>{{ $workshop->category }}
                         </span>
                         <span class="text-slate-500 text-sm">
-                            <i class="fas fa-clock mr-1"></i>{{ $workshop->duration_hours ?? 2 }}h
+                            <i class="fas fa-clock mr-1"></i>{{ $workshop->duration_hours }}h
                         </span>
                     </div>
 
@@ -155,9 +155,9 @@
                     <div class="flex items-center justify-between pt-4 border-t border-slate-700">
                         <div>
                             <p class="text-slate-500 text-xs">Market Value</p>
-                            <p class="text-lg font-bold text-slate-300">${{ number_format($workshop->market_value ?? 0, 2) }}</p>
+                            <p class="text-lg font-bold text-slate-300">${{ number_format($workshop->market_value, 2) }}</p>
                         </div>
-                        <a href="{{ route('assignments.index', ['workshop' => $workshop->slug]) }}" 
+                        <a href="{{ route('assignments.index', ['workshop' => $workshop->slug]) }}"
                            class="px-5 py-2.5 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-indigo-500/25 flex items-center">
                             <i class="fas fa-rocket mr-2"></i>Join
                         </a>

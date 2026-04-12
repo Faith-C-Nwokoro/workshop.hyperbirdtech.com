@@ -122,7 +122,7 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-4 gradient-text">Contact</h3>
                     <ul class="space-y-2 text-slate-400">
-                        <li><i class="fas fa-envelope mr-2 text-indigo-400"></i>workshops@hyperbird.tech</li>
+                        <li><i class="fas fa-envelope mr-2 text-indigo-400"></i>workshops@hyperbirdtech.com</li>
                         <li><i class="fas fa-map-marker-alt mr-2 text-indigo-400"></i>Africa & Global Markets</li>
                         <li><i class="fas fa-clock mr-2 text-indigo-400"></i>Available 24/7</li>
                     </ul>
