@@ -137,7 +137,7 @@
             <!-- UI/UX Design Card -->
             <div class="glass rounded-2xl overflow-hidden hover:bg-slate-800/50 transition-all transform hover:scale-105 card-3d group">
                 <div class="relative h-40 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a5638d48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="UI/UX Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="UI/UX Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
                 </div>
                 <div class="p-6">
